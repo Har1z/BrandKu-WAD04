@@ -1,6 +1,13 @@
-const Home = () => {
+import { CardGrid } from '../component/CardGrid';
+import Hero from '../component/Hero'
+
+const Home = ({ features }) => {
+  console.log(features)
   return (
-    <div>ini home</div>
+    <div>
+      <Hero/>
+      <CardGrid features={features}/>
+    </div>
   );
 };
 
