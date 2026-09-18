@@ -1,7 +1,18 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import { useLocalStorageState } from "../hooks/useLocalStorageState";
 
 const Hero = () => {
-  const [angka, setAngka] = useState(0) 
+  
+  const [angka, setAngka] = useLocalStorageState("angka", 0)
+  // const [angka, setAngka] = useState(() => {
+  //   const saved = localStorage.getItem("angka")
+  //   return saved ? parseInt(saved) : 0
+  // })
+
+  // useEffect(() => {
+  //   localStorage.setItem("angka", angka)
+  // }, [angka])
+
   return(
     <section className="bg-slate-50 py-20 px-8 text-center">
       <h1 className="text-5xl font-extrabold text-slate-900 mb-6">Solusi Terbaik untuk Bisnismu</h1>
